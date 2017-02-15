@@ -19,8 +19,9 @@
 module.exports = function (gulp, plugins, config) {
 
    var handleErrors = require(config.gulpDir + 'utils/handleErrors.js'),
+       gulp         = require('gulp'),
+       sass         = require('gulp-sass'),
        bourbon      = require('bourbon').includePaths,
-       neat         = require('bourbon-neat').includePaths,
        mqpacker     = require('css-mqpacker'),
        runSequence  = require('run-sequence').use(gulp);
 
@@ -109,7 +110,11 @@ module.exports = function (gulp, plugins, config) {
 
          // Compile Sass using LibSass.
          .pipe(plugins.sass({
-            includePaths:    [].concat(bourbon, neat),
+            includePaths:    ([bourbon, //neat,
+               '../../node_modules/susy/sass/susy',
+               '../../node_modules/layout-tools-for-susy/stylesheets/layout-tools-for-susy',
+               '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+               ]),
             errLogToConsole: true,
             outputStyle:     'expanded' // Options: nested, expanded, compact, compressed
          }))

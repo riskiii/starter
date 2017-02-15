@@ -17,16 +17,16 @@ module.exports = function (moduleRoot) {
     ***********************************/
 
    var moduleSettings = {
-      package: 'starter',
-      domain:  'starter.dev',
+      package: 'campfirepixels',
+      domain:  'campfirepixels.dev',
       // If this is for a theme, set to `true`; else, set to `false`.
       isTheme: true,
       i18n:    {
-         textdomain:       'starter',
-         languageFilename: 'starter.pot',
-         bugReport:        'https://knowthecode.io',
-         lastTranslator:   'Know the Code <hello@knowthecode.io>',
-         team:             'Team <hello@knowthecode.io>'
+         textdomain:       'campfirepixels',
+         languageFilename: 'campfirepixels.pot',
+         bugReport:        'https://campfirepixels.com',
+         lastTranslator:   'Danny G Smith <dgs@campfirepixels.com>',
+         team:             'Danny G Smith <hello@campfirepixels.com>'
       }
    };
 
@@ -131,7 +131,7 @@ module.exports = function (moduleRoot) {
          dest: distDirs.css,
       },
       cssfinalize: {
-         run:  true,
+         run:  false,
          src:  [distDirs.css + "style.css", distDirs.css + "style.min.css"],
          dest: distDirs.finalCSS,
       }
